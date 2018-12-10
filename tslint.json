@@ -1,0 +1,19 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      ".idea/**/*.*",
+      "build/**/*.*",
+      "bin/**/*.*",
+      "config/**/*.*",
+      "controllers/**/*.*",
+      "models/**/*.*",
+      "node_modules/**/*.*",
+      "public/**/*.*",
+      "routes/**/*.*"
+    ],
+    "include": [
+      "src/app/**/*.*"
+    ]
+  }
+}
