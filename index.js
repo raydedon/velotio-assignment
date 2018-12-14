@@ -15,7 +15,7 @@ const filesApiRouter = require('./server/routes/filesApiRoute');
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(config.get('MongoDB.connectionString'), { useNewUrlParser: true })
+mongoose.connect(encodeURI(config.get('MongoDB.connectionString')), { useNewUrlParser: true })
 	.then(() => {
 		console.log('Successfully connected to the database');
 	})

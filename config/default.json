@@ -8,6 +8,6 @@
 		"isCluster": false
 	},
 	"MongoDB": {
-		"connectionString": "mongodb://localhost:27017/velotio"
+		"connectionString": "mongodb://reviewer:Hello123@ds143734.mlab.com:43734/project"
 	}
 }

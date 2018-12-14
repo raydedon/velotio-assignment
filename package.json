@@ -3,12 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node index.js",
     "develop": "webpack --mode=development --watch",
     "build-prod": "NODE_ENV=production webpack",
     "build-prod-win": "SET NODE_ENV=production & webpack",
     "build-dev": "webpack",
-    "tslint": "tslint --config tslint.json --project tsconfig.json --fix"
+    "tslint": "tslint --config tslint.json --project tsconfig.json --fix",
+    "mongod": "sudo service mongod start",
+    "mongo": "mongo --host 127.0.0.1:27017",
+    "mongodb-win": "mongod",
+    "test": "jest",
+    "test:watch": "npm test --watch"
   },
   "dependencies": {
     "@types/lodash": "^4.14.118",

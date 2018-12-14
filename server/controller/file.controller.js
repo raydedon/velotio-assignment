@@ -3,14 +3,23 @@ const File = require('../model/file');
 exports = module.exports = {};
 
 exports.readAll = (req, res) => {
-	console.info(req.param.name);
+	console.log('req.param.name: ' + req.params.name);
 	File.find({name: {'$regex' : req.params.name, '$options' : 'i'}})
 		.then(files => {
-			//res.send(files);
-			setTimeout((res, files) => res.send(files), 1000, res, files);
+			res.send(files);
 		})
 		.catch(err => {
-			res.status(500).send({message: err.message || 'Some error occurred while retrieving Users.'});
+			res.status(500).send({message: err.message || 'Some error occurred while retrieving Files.'});
+		});
+};
+
+exports.findAll = (req, res) => {
+	File.find()
+		.then(files => {
+			res.send(files);
+		})
+		.catch(err => {
+			res.status(500).send({message: err.message || 'Some error occurred while retrieving Files.'});
 		});
 };
 
@@ -29,7 +38,7 @@ exports.create = (req, res) => {
 		})
 		.catch(err => {
 			res.status(500).send({
-				message: err.message || 'Some error occurred while creating the User.'
+				message: err.message || 'Some error occurred while creating the File.'
 			});
 		});
 };
